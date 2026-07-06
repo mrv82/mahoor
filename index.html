@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ماهور | مانتو زنانه لوکس ایرانی</title>
+  <meta name="description" content="ماهور، برند پوشاک لوکس زنانه؛ مانتوهای روزمره، مجلسی، لاکچری و فصلی با دوخت ظریف و پارچه‌های درجه یک. تجربه‌ی خرید بصری و مدرن با ارسال سریع و ضمانت بازگشت." />
+  <meta name="keywords" content="مانتو زنانه, مانتو مجلسی, مانتو لوکس, پوشاک زنانه, خرید مانتو, ماهور" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- Page load loader -->
+  <div class="loader" id="loader">
+    <div class="loader-mark">
+      <span>M</span>
+      <div class="loader-bar"><i></i></div>
+      <p>MAHOOR</p>
+    </div>
+  </div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" id="scrollProgress"></div>
+
+  <!-- Animated gradient background -->
+  <div class="bg-aurora" aria-hidden="true">
+    <span class="orb orb-1"></span>
+    <span class="orb orb-2"></span>
+    <span class="orb orb-3"></span>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#home" class="brand" aria-label="ماهور">
+        <span class="brand-glyph">M</span>
+        <span class="brand-name">ماهور<em>MAHOOR</em></span>
+      </a>
+      <nav class="nav-links" id="navLinks" aria-label="ناوبری اصلی">
+        <a href="#collections">کالکشن‌ها</a>
+        <a href="#catalog">فروشگاه</a>
+        <a href="#new">جدیدترین‌ها</a>
+        <a href="#reviews">نظرات</a>
+        <a href="#delivery">ارسال و بازگشت</a>
+      </nav>
+      <div class="nav-actions">
+        <button class="icon-btn" id="wishBtn" aria-label="علاقه‌مندی‌ها" data-magnetic>
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M12 21s-7.5-4.6-10-9.2C.4 8.4 2 5 5.3 5c2 0 3.4 1.1 4.2 2.3.4.6 1.6.6 2 0C12.3 6.1 13.7 5 15.7 5 19 5 20.6 8.4 22 11.8 19.5 16.4 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="badge" id="wishCount">0</span>
+        </button>
+        <button class="icon-btn" id="cartBtn" aria-label="سبد خرید" data-magnetic>
+          <svg viewBox="0 0 24 24" width="20" height="20"><path d="M6 7h12l-1 12H7L6 7z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M9 7a3 3 0 0 1 6 0" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+          <span class="badge" id="cartCount">0</span>
+        </button>
+        <button class="burger" id="burger" aria-label="منو"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="home">
+      <div class="hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow reveal">کالکشن نوروز ۱۴۰۵ · تازه رسید</span>
+          <h1 class="reveal">
+            ظرافت را<br><span class="grad-text">به تن کنید</span>
+          </h1>
+          <p class="hero-lead reveal">
+            ماهور، جایی که دوختِ ظریف ایرانی با طراحی مدرن گره می‌خورد. مانتوهایی که برای زنِ امروز ساخته شده‌اند؛ لوکس، راحت و ماندگار.
+          </p>
+          <div class="hero-cta reveal">
+            <a href="#catalog" class="btn btn-primary" data-magnetic>مشاهده‌ی فروشگاه</a>
+            <a href="#collections" class="btn btn-ghost" data-magnetic>کالکشن‌ها ↗</a>
+          </div>
+          <div class="hero-stats reveal">
+            <div><b class="counter" data-target="48000">0</b><span>مشتری خرسند</span></div>
+            <div><b class="counter" data-target="120000">0</b><span>سفارش موفق</span></div>
+            <div><b class="counter" data-target="98">0</b><span>٪ رضایت</span></div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="float-card fc-main" data-parallax="0.06">
+            <img src="img/1.jpg"مانتو لوکس ماهور" loading="eager" />
+            <div class="fc-tag glass">مانتو مجلسی «آوا»</div>
+          </div>
+          <div class="float-card fc-2 floaty" data-parallax="0.12">
+            <img src="img/3.jpg" alt="کالکشن روزمره" loading="lazy" />
+          </div>
+          <div class="float-card fc-3 floaty-slow glass-price" data-parallax="0.18">
+            <span class="fp-name">پارچه کرپ ژاپنی</span>
+            <span class="fp-val">دوخت دست · درجه یک</span>
+          </div>
+          <div class="hero-ring" aria-hidden="true"></div>
+        </div>
+      </div>
+      <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+          <span>دوخت ظریف ایرانی</span><span>•</span><span>پارچه درجه یک</span><span>•</span><span>ارسال سریع</span><span>•</span><span>ضمانت بازگشت</span><span>•</span><span>مشاوره استایل</span><span>•</span>
+          <span>دوخت ظریف ایرانی</span><span>•</span><span>پارچه درجه یک</span><span>•</span><span>ارسال سریع</span><span>•</span><span>ضمانت بازگشت</span><span>•</span><span>مشاوره استایل</span><span>•</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- COLLECTIONS -->
+    <section class="section" id="collections">
+      <div class="section-head reveal">
+        <span class="kicker">کالکشن‌ها</span>
+        <h2>برای هر لحظه‌ی زندگی</h2>
+        <p>از صبحِ کاری تا شبِ مجلسی؛ ماهور برای هر موقعیت، انتخابی درخور دارد.</p>
+      </div>
+      <div class="collections-grid">
+        <a href="#catalog" class="coll-card tilt reveal" data-cat="روزمره">
+          <img src="img/2.jpg" alt="مانتو روزمره" loading="lazy"/>
+          <div class="coll-overlay"><h3>روزمره</h3><span>راحتی بی‌انتها</span></div>
+        </a>
+        <a href="#catalog" class="coll-card tilt reveal" data-cat="مجلسی">
+          <img src="img/4.jpg" alt="مانتو مجلسی" loading="lazy"/>
+          <div class="coll-overlay"><h3>مجلسی</h3><span>درخشش در مهمانی</span></div>
+        </a>
+        <a href="#catalog" class="coll-card tilt reveal" data-cat="لاکچری">
+          <img src="img/5.jpg" alt="مانتو لاکچری" loading="lazy"/>
+          <div class="coll-overlay"><h3>لاکچری</h3><span>هنرِ دوختِ دست</span></div>
+        </a>
+        <a href="#catalog" class="coll-card tilt reveal" data-cat="فصلی">
+          <img src="img/6.jpg" alt="مانتو فصلی" loading="lazy"/>
+          <div class="coll-overlay"><h3>فصلی</h3><span>هماهنگ با طبیعت</span></div>
+        </a>
+      </div>
+    </section>
+
+    <!-- OFFERS -->
+    <section class="section offers-band reveal" id="offers">
+      <div class="offers-glass glass">
+        <div>
+          <span class="kicker light">پیشنهاد ویژه‌ی فصل</span>
+          <h2>تا ۳۵٪ تخفیف روی کالکشن بهار</h2>
+          <p>با کد <b>MAHOOR35</b> در تسویه‌حساب. فرصت محدود تا پایان هفته.</p>
+        </div>
+        <div class="offer-timer" id="offerTimer" aria-label="زمان باقی‌مانده">
+          <div><b id="dd">00</b><span>روز</span></div>
+          <div><b id="hh">00</b><span>ساعت</span></div>
+          <div><b id="mm">00</b><span>دقیقه</span></div>
+          <div><b id="ss">00</b><span>ثانیه</span></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CATALOG -->
+    <section class="section" id="catalog">
+      <div class="section-head reveal">
+        <span class="kicker">فروشگاه</span>
+        <h2>محصولات ماهور</h2>
+        <p>فیلترها را انتخاب کنید و محصول دلخواهتان را در چند ثانیه پیدا کنید.</p>
+      </div>
+
+      <div class="filters glass reveal">
+        <div class="filter-group" id="styleFilter">
+          <button class="chip active" data-filter-style="all">همه</button>
+          <button class="chip" data-filter-style="روزمره">روزمره</button>
+          <button class="chip" data-filter-style="مجلسی">مجلسی</button>
+          <button class="chip" data-filter-style="لاکچری">لاکچری</button>
+          <button class="chip" data-filter-style="فصلی">فصلی</button>
+        </div>
+        <div class="filter-side">
+          <label class="sel">
+            <span>رنگ</span>
+            <select id="colorFilter">
+              <option value="all">همه رنگ‌ها</option>
+              <option value="مشکی">مشکی</option>
+              <option value="کرم">کرم</option>
+              <option value="زیتونی">زیتونی</option>
+              <option value="طوسی">طوسی</option>
+              <option value="شرابی">شرابی</option>
+            </select>
+          </label>
+          <label class="sel">
+            <span>سایز</span>
+            <select id="sizeFilter">
+              <option value="all">همه سایزها</option>
+              <option value="S">S</option>
+              <option value="M">M</option>
+              <option value="L">L</option>
+              <option value="XL">XL</option>
+            </select>
+          </label>
+          <label class="sel">
+            <span>قیمت</span>
+            <select id="priceFilter">
+              <option value="all">همه قیمت‌ها</option>
+              <option value="low">زیر ۱٫۵ میلیون</option>
+              <option value="mid">۱٫۵ تا ۳ میلیون</option>
+              <option value="high">بالای ۳ میلیون</option>
+            </select>
+          </label>
+          <label class="sel">
+            <span>مرتب‌سازی</span>
+            <select id="sortBy">
+              <option value="pop">محبوب‌ترین</option>
+              <option value="cheap">ارزان‌ترین</option>
+              <option value="expensive">گران‌ترین</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="products-grid" id="productsGrid"></div>
+      <p class="empty-note" id="emptyNote" hidden>محصولی با این فیلترها یافت نشد.</p>
+    </section>
+
+    <!-- NEW ARRIVALS / TRENDING -->
+    <section class="section" id="new">
+      <div class="section-head reveal">
+        <span class="kicker">تازه‌ها و ترند</span>
+        <h2>جدیدترین‌ها</h2>
+        <p>محبوب‌ترین انتخاب‌های این هفته‌ی مشتریان ماهور.</p>
+      </div>
+      <div class="trend-rail" id="trendRail"></div>
+    </section>
+
+    <!-- SIZE GUIDE ASSISTANT -->
+    <section class="section" id="sizeguide">
+      <div class="sizeguide-wrap glass reveal">
+        <div class="sg-copy">
+          <span class="kicker">دستیار سایز</span>
+          <h2>سایز درست را پیدا کنید</h2>
+          <p>قد و وزنتان را وارد کنید تا ماهور بهترین سایز را برایتان پیشنهاد دهد.</p>
+          <div class="sg-form">
+            <label>قد (سانتی‌متر)
+              <input type="range" id="sgHeight" min="145" max="190" value="165" />
+              <b id="sgHeightVal">۱۶۵</b>
+            </label>
+            <label>وزن (کیلوگرم)
+              <input type="range" id="sgWeight" min="40" max="110" value="62" />
+              <b id="sgWeightVal">۶۲</b>
+            </label>
+          </div>
+        </div>
+        <div class="sg-result">
+          <span>سایز پیشنهادی شما</span>
+          <div class="sg-badge" id="sgBadge">M</div>
+          <p id="sgHint">این سایز برای اندام شما فیت استاندارد دارد.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="section" id="reviews">
+      <div class="section-head reveal">
+        <span class="kicker">نظرات مشتریان</span>
+        <h2>صدای زنانِ ماهور</h2>
+        <p>بیش از ۴۸ هزار مشتری، تجربه‌ی خرید از ماهور را دوست داشته‌اند.</p>
+      </div>
+      <div class="reviews-grid">
+        <figure class="review-card reveal glass">
+          <div class="stars">★★★★★</div>
+          <blockquote>«کیفیت پارچه و دوخت واقعاً فراتر از انتظارم بود. مانتوی مجلسی‌م رو همه تحسین کردن.»</blockquote>
+          <figcaption>— نگار احمدی · تهران</figcaption>
+        </figure>
+        <figure class="review-card reveal glass">
+          <div class="stars">★★★★★</div>
+          <blockquote>«ارسال سریع و بسته‌بندی شیک. دستیار سایز دقیقاً سایز درست رو پیشنهاد داد.»</blockquote>
+          <figcaption>— مریم رستمی · اصفهان</figcaption>
+        </figure>
+        <figure class="review-card reveal glass">
+          <div class="stars">★★★★☆</div>
+          <blockquote>«طراحی مینیمال و لوکس، دقیقاً همون چیزی که دنبالش بودم. حتماً باز هم خرید می‌کنم.»</blockquote>
+          <figcaption>— سارا کریمی · شیراز</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <!-- DELIVERY & RETURN -->
+    <section class="section" id="delivery">
+      <div class="section-head reveal">
+        <span class="kicker">اطمینان خاطر</span>
+        <h2>ارسال، بازگشت و پشتیبانی</h2>
+      </div>
+      <div class="features-grid">
+        <div class="feature-card reveal">
+          <div class="fi">🚚</div><h3>ارسال سریع سراسری</h3>
+          <p>ارسال رایگان برای سفارش‌های بالای ۲ میلیون تومان؛ تحویل ۲ تا ۴ روز کاری.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="fi">↩️</div><h3>۷ روز ضمانت بازگشت</h3>
+          <p>اگر راضی نبودید، تا ۷ روز بدون دردسر مرجوع کنید و وجه‌تان را بگیرید.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="fi">🧵</div><h3>تضمین کیفیت دوخت</h3>
+          <p>هر مانتو پیش از ارسال بازرسی می‌شود؛ دوختِ ظریف با پارچه‌ی درجه یک.</p>
+        </div>
+        <div class="feature-card reveal">
+          <div class="fi">💬</div><h3>مشاوره‌ی استایل</h3>
+          <p>تیم استایلیست ماهور در واتساپ همراه شماست تا بهترین انتخاب را داشته باشید.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-cta reveal">
+      <h2>عضو خانواده‌ی ماهور شوید</h2>
+      <p>از تخفیف‌های ویژه و کالکشن‌های تازه، زودتر از همه باخبر شوید.</p>
+      <form class="news-form" id="newsForm">
+        <input type="email" placeholder="ایمیل شما" required aria-label="ایمیل" />
+        <button class="btn btn-primary" data-magnetic type="submit">عضویت</button>
+      </form>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <a href="#home" class="brand"><span class="brand-glyph">M</span><span class="brand-name">ماهور</span></a>
+        <p class="foot-desc">برند پوشاک لوکس زنانه؛ ظرافت ایرانی، طراحی مدرن.</p>
+      </div>
+      <div><h4>فروشگاه</h4><a href="#catalog">همه محصولات</a><a href="#new">جدیدترین‌ها</a><a href="#offers">تخفیف‌ها</a></div>
+      <div><h4>راهنما</h4><a href="#sizeguide">راهنمای سایز</a><a href="#delivery">ارسال و بازگشت</a><a href="#reviews">نظرات</a></div>
+      <div><h4>ارتباط</h4><a href="#">۰۲۱-۱۲۳۴۵۶۷۸</a><a href="#">info@mahoor.style</a></div>
+    </div>
+    <div class="footer-bottom">
+      <span>© ۱۴۰۵ ماهور · تمام حقوق محفوظ است.</span>
+      <span>طراحی با عشق برای زنِ ایرانی</span>
+    </div>
+  </footer>
+
+  <!-- WhatsApp float -->
+  <a href="https://wa.me/989000000000" class="wa-float" target="_blank" rel="noopener" aria-label="مشاوره در واتساپ" data-magnetic>
+    <svg viewBox="0 0 32 32" width="26" height="26" fill="currentColor"><path d="M16 3C9 3 3.5 8.5 3.5 15.5c0 2.4.7 4.6 1.9 6.6L4 29l7.1-1.9c1.9 1 4 1.6 6.3 1.6h.1C23.5 28.7 29 23.2 29 16.2 29 8.6 23 3 16 3zm7.4 17.6c-.3.9-1.8 1.7-2.5 1.8-.6.1-1.4.1-2.3-.1-.5-.2-1.2-.4-2.1-.8-3.7-1.6-6.1-5.3-6.3-5.6-.2-.3-1.5-2-1.5-3.8s.9-2.7 1.3-3.1c.3-.4.7-.4 1-.4h.7c.2 0 .5-.1.8.6.3.7 1 2.5 1.1 2.6.1.2.1.4 0 .6-.4.8-.8 1-.1 1.3.5.9 1.4 1.9 2.9 2.6.3.1.5.1.7-.1.2-.2.8-1 1.1-1.3.2-.3.5-.2.8-.1.3.1 1.9.9 2.2 1.1.3.1.5.2.6.3.1.3.1.9-.2 1.7z"/></svg>
+    <span class="wa-label">مشاوره استایل</span>
+  </a>
+
+  <!-- PRODUCT MODAL -->
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card glass" role="dialog" aria-modal="true">
+      <button class="modal-close" data-close aria-label="بستن">✕</button>
+      <div class="modal-media">
+        <div class="zoom-frame" id="zoomFrame">
+          <img id="modalImg" src="" alt="" />
+        </div>
+        <div class="thumbs" id="modalThumbs"></div>
+      </div>
+      <div class="modal-info">
+        <span class="kicker" id="modalCat"></span>
+        <h3 id="modalName"></h3>
+        <div class="modal-rate"><span id="modalStars"></span><small id="modalReviews"></small></div>
+        <p id="modalDesc"></p>
+        <div class="modal-fabric" id="modalFabric"></div>
+        <div class="modal-selects">
+          <div><span>رنگ</span><div class="opt-row" id="modalColors"></div></div>
+          <div><span>سایز</span><div class="opt-row" id="modalSizes"></div></div>
+        </div>
+        <div class="modal-price"><b id="modalPrice"></b></div>
+        <div class="modal-actions">
+          <button class="btn btn-primary" id="modalAdd" data-magnetic>افزودن به سبد خرید</button>
+          <button class="btn btn-ghost" id="modalBuy" data-magnetic>خرید فوری</button>
+          <button class="icon-btn heart" id="modalWish" aria-label="افزودن به علاقه‌مندی">♡</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CART DRAWER -->
+  <div class="drawer" id="cartDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-drawer-close></div>
+    <aside class="drawer-panel">
+      <div class="drawer-head"><h3>سبد خرید</h3><button data-drawer-close aria-label="بستن">✕</button></div>
+      <div class="drawer-body" id="cartItems"></div>
+      <div class="drawer-foot">
+        <div class="cart-total"><span>مجموع</span><b id="cartTotal">۰ تومان</b></div>
+        <div class="promo"><input type="text" id="promoInput" placeholder="کد تخفیف" /><button id="promoBtn">اعمال</button></div>
+        <button class="btn btn-primary full" id="checkoutBtn" data-magnetic>ادامه‌ی خرید و پرداخت</button>
+      </div>
+    </aside>
+  </div>
+
+  <!-- WISHLIST DRAWER -->
+  <div class="drawer" id="wishDrawer" aria-hidden="true">
+    <div class="drawer-backdrop" data-drawer-close></div>
+    <aside class="drawer-panel">
+      <div class="drawer-head"><h3>علاقه‌مندی‌ها</h3><button data-drawer-close aria-label="بستن">✕</button></div>
+      <div class="drawer-body" id="wishItems"></div>
+    </aside>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal" id="checkoutModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+    <div class="modal-card glass checkout-card" role="dialog" aria-modal="true">
+      <button class="modal-close" data-close aria-label="بستن">✕</button>
+      <div class="checkout-steps">
+        <span class="step active" data-step="1">۱ · اطلاعات</span>
+        <span class="step" data-step="2">۲ · ارسال</span>
+        <span class="step" data-step="3">۳ · پرداخت</span>
+      </div>
+      <div class="checkout-body">
+        <div class="cstep" data-cstep="1">
+          <h3>اطلاعات تماس</h3>
+          <input placeholder="نام و نام خانوادگی" /><input placeholder="شماره موبایل" />
+        </div>
+        <div class="cstep" data-cstep="2" hidden>
+          <h3>آدرس ارسال</h3>
+          <input placeholder="شهر" /><textarea placeholder="آدرس کامل پستی"></textarea>
+        </div>
+        <div class="cstep" data-cstep="3" hidden>
+          <h3>پرداخت امن</h3>
+          <p class="pay-note">با کلیک روی «پرداخت»، به درگاه امن بانکی منتقل می‌شوید.</p>
+          <div class="pay-sum"><span>مبلغ قابل پرداخت</span><b id="checkoutTotal">۰ تومان</b></div>
+        </div>
+      </div>
+      <div class="checkout-nav">
+        <button class="btn btn-ghost" id="cPrev" data-magnetic hidden>قبلی</button>
+        <button class="btn btn-primary" id="cNext" data-magnetic>مرحله‌ی بعد</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- TOAST -->
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
