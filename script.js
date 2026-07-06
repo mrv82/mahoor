@@ -13,16 +13,16 @@ const COLORS = {
   'طوسی': '#8a8a8a', 'شرابی': '#7a2e3a'
 };
 const IMG = [
-  'photo-1490481651871-ab68de25d43d',
-  'photo-1595777457583-95e059d581b8',
-  'photo-1539109136881-3be0616acf4b',
-  'photo-1483985988355-763728e1935b',
-  'photo-1434389677669-e08b4cac3105',
-  'photo-1509631179647-0177331693ae',
-  'photo-1596993100471-c3905dafa78e',
-  'photo-1487412720507-e7ab37603c6f'
+  '1.jpg',
+  '2.jpg',
+  '3.jpg',
+  '4.jpg',
+  '5.jpg',
+  '6.jpg',
+  '7.jpg',
+  '8.jpg'
 ];
-const src = (id, w = 700) => `https://images.unsplash.com/${id}?w=${w}&q=80`;
+const src = (file, size = '') => `img/${file}`;
 
 const PRODUCTS = [
   { id:1, name:'مانتو مجلسی آوا', cat:'مجلسی', price:2850000, old:3400000, rate:4.9, reviews:214, colors:['مشکی','شرابی','کرم'], sizes:['S','M','L','XL'], img:IMG[0], fabric:'کرپ ژاپنی درجه یک · آستر ساتن · دوخت دست', desc:'مانتویی بلند و باشکوه برای مهمانی‌های خاص؛ برشی زنانه با جزئیات دوختِ ظریف که اندام را می‌پوشاند و برازنده می‌کند.', new:true, trend:true },
@@ -235,15 +235,30 @@ function openProduct(id) {
 
 /* Zoom */
 const zf = $('#zoomFrame');
-zf.addEventListener('mousemove', e => {
-  if (!zf.classList.contains('zoom')) return;
-  const r = zf.getBoundingClientRect();
-  const x = ((e.clientX - r.left) / r.width) * 100;
-  const y = ((e.clientY - r.top) / r.height) * 100;
-  $('#modalImg').style.transformOrigin = `${x}% ${y}%`;
-});
-zf.addEventListener('click', () => zf.classList.toggle('zoom'));
+const modalImg = $('#modalImg');
 
+if (zf && modalImg) {
+
+  zf.addEventListener('mousemove', e => {
+
+    if (!zf.classList.contains('zoom')) return;
+
+    const r = zf.getBoundingClientRect();
+
+    const x = ((e.clientX - r.left) / r.width) * 100;
+    const y = ((e.clientY - r.top) / r.height) * 100;
+
+    modalImg.style.transformOrigin = `${x}% ${y}%`;
+
+  });
+
+  zf.addEventListener('click', () => {
+
+    zf.classList.toggle('zoom');
+
+  });
+
+}
 /* ============ MODAL / DRAWER GENERIC ============ */
 function openModal(m) { m.classList.add('open'); m.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
 function closeModal(m) { m.classList.remove('open'); m.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; zf.classList.remove('zoom'); }
@@ -265,25 +280,135 @@ $('#promoBtn').onclick = () => {
   updateCart();
 };
 
-/* ============ CHECKOUT ============ */
-let cStep = 1;
-function openCheckout() {
-  if (!cart.length) { toast('سبد خرید شما خالی است'); return; }
-  cStep = 1; renderCheckout(); openModal($('#checkoutModal'));
-}
-$('#checkoutBtn').onclick = () => { closeDrawer($('#cartDrawer')); openCheckout(); };
-function renderCheckout() {
-  $$('.cstep').forEach(s => s.hidden = +s.dataset.cstep !== cStep);
-  $$('.step').forEach(s => s.classList.toggle('active', +s.dataset.step === cStep));
-  $('#cPrev').hidden = cStep === 1;
-  $('#cNext').textContent = cStep === 3 ? 'پرداخت نهایی' : 'مرحله‌ی بعد';
-}
-$('#cNext').onclick = () => {
-  if (cStep < 3) { cStep++; renderCheckout(); }
-  else { closeModal($('#checkoutModal')); cart = []; promoApplied = false; updateCart(); toast('سفارش شما با موفقیت ثبت شد ✓ منتظرتان هستیم'); }
-};
-$('#cPrev').onclick = () => { if (cStep > 1) { cStep--; renderCheckout(); } };
 
+/* ============ CHECKOUT ============ */
+
+let cStep = 1;
+
+function openCheckout() {
+
+  if (!cart.length) {
+    toast('سبد خرید شما خالی است');
+    return;
+  }
+
+  cStep = 1;
+  renderCheckout();
+  openModal($('#checkoutModal'));
+
+}
+
+$('#checkoutBtn').onclick = () => {
+  closeDrawer($('#cartDrawer'));
+  openCheckout();
+};
+
+function renderCheckout() {
+
+  $$('.cstep').forEach(step => {
+    step.hidden = (+step.dataset.cstep !== cStep);
+  });
+
+  $$('.step').forEach(step => {
+    step.classList.toggle('active', +step.dataset.step === cStep);
+  });
+
+  $('#cPrev').hidden = (cStep === 1);
+
+  $('#cNext').textContent =
+    cStep === 3 ? 'پرداخت نهایی' : 'مرحله‌ی بعد';
+
+}
+
+/* ---------- Validation ---------- */
+
+function validateCheckoutStep() {
+
+  // مرحله اول
+  if (cStep === 1) {
+
+    const name = $('#customerName');
+    const phone = $('#customerPhone');
+
+    if (!name.value.trim()) {
+      toast('لطفاً نام و نام خانوادگی را وارد کنید.');
+      name.focus();
+      return false;
+    }
+
+    if (!phone.value.trim()) {
+      toast('لطفاً شماره موبایل را وارد کنید.');
+      phone.focus();
+      return false;
+    }
+
+    if (!/^09\d{9}$/.test(phone.value.trim())) {
+      toast('شماره موبایل معتبر نیست.');
+      phone.focus();
+      return false;
+    }
+
+  }
+
+  // مرحله دوم
+  if (cStep === 2) {
+
+    const city = $('#customerCity');
+    const address = $('#customerAddress');
+
+    if (!city.value.trim()) {
+      toast('لطفاً شهر را وارد کنید.');
+      city.focus();
+      return false;
+    }
+
+    if (!address.value.trim()) {
+      toast('لطفاً آدرس کامل پستی را وارد کنید.');
+      address.focus();
+      return false;
+    }
+
+  }
+
+  return true;
+
+}
+
+/* ---------- Next ---------- */
+
+$('#cNext').onclick = () => {
+
+  if (!validateCheckoutStep()) return;
+
+  if (cStep < 3) {
+
+    cStep++;
+    renderCheckout();
+    return;
+
+  }
+
+  closeModal($('#checkoutModal'));
+
+  cart = [];
+  promoApplied = false;
+
+  updateCart();
+
+  toast('سفارش شما با موفقیت ثبت شد ✓ منتظرتان هستیم');
+
+};
+
+/* ---------- Previous ---------- */
+
+$('#cPrev').onclick = () => {
+
+  if (cStep > 1) {
+    cStep--;
+    renderCheckout();
+  }
+
+};
 /* ============ TOAST ============ */
 let toastT;
 function toast(msg) {
@@ -295,10 +420,8 @@ function pulse(sel) { const el = $(sel); el.animate([{ transform: 'scale(1)' }, 
 /* ============ NAVBAR ============ */
 const nav = $('#navbar');
 window.addEventListener('scroll', () => {
-  nav.classList.toggle('shrink', window.scrollY > 40);
-  const h = document.documentElement.scrollHeight - innerHeight;
-  $('#scrollProgress').style.width = (scrollY / h * 100) + '%';
-}, { passive: true });
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
 
 $('#burger').onclick = () => { $('#burger').classList.toggle('open'); $('#navLinks').classList.toggle('open'); };
 $$('#navLinks a').forEach(a => a.onclick = () => { $('#burger').classList.remove('open'); $('#navLinks').classList.remove('open'); });
@@ -396,8 +519,14 @@ function tick() {
 setInterval(tick, 1000); tick();
 
 /* ============ NEWSLETTER ============ */
-$('#newsForm').addEventListener('submit', e => { e.preventDefault(); e.target.reset(); toast('عضویت شما ثبت شد ✓ خوش آمدید'); });
-
+const newsForm = $('#newsForm');
+if(newsForm){
+  newsForm.addEventListener('submit', e=>{
+    e.preventDefault();
+      e.target.reset();
+        toast('عضویت شما ثبت شد ✓ خوش آمدید');
+      });
+}
 /* ============ INIT ============ */
 renderCatalog();
 renderTrend();

@@ -85,11 +85,11 @@
 
         <div class="hero-visual">
           <div class="float-card fc-main" data-parallax="0.06">
-            <img src="img/1.jpg"مانتو لوکس ماهور" loading="eager" />
+            <img src="img/1.jpg" alt="مانتو لوکس ماهور" loading="eager" />
             <div class="fc-tag glass">مانتو مجلسی «آوا»</div>
           </div>
           <div class="float-card fc-2 floaty" data-parallax="0.12">
-            <img src="img/4.jpg" alt="کالکشن روزمره" loading="lazy" />
+            <img src="img/2.jpg" alt="کالکشن روزمره" loading="lazy" />
           </div>
           <div class="float-card fc-3 floaty-slow glass-price" data-parallax="0.18">
             <span class="fp-name">پارچه کرپ ژاپنی</span>
@@ -115,7 +115,7 @@
       </div>
       <div class="collections-grid">
         <a href="#catalog" class="coll-card tilt reveal" data-cat="روزمره">
-          <img src="img/2.jpg" alt="مانتو روزمره" loading="lazy"/>
+          <img src="img/3.jpg" alt="مانتو روزمره" loading="lazy"/>
           <div class="coll-overlay"><h3>روزمره</h3><span>راحتی بی‌انتها</span></div>
         </a>
         <a href="#catalog" class="coll-card tilt reveal" data-cat="مجلسی">
@@ -135,7 +135,7 @@
 
     <!-- OFFERS -->
     <section class="section offers-band reveal" id="offers">
-      <div class="offers-glass glass">
+      <div class="offers-glass">
         <div>
           <span class="kicker light">پیشنهاد ویژه‌ی فصل</span>
           <h2>تا ۳۵٪ تخفیف روی کالکشن بهار</h2>
@@ -399,11 +399,13 @@
       <div class="checkout-body">
         <div class="cstep" data-cstep="1">
           <h3>اطلاعات تماس</h3>
-          <input placeholder="نام و نام خانوادگی" /><input placeholder="شماره موبایل" />
+          <input id="customerName" type="text" placeholder="نام و نام خانوادگی">
+          <input id="customerPhone" type="tel" placeholder="شماره موبایل">
         </div>
         <div class="cstep" data-cstep="2" hidden>
           <h3>آدرس ارسال</h3>
-          <input placeholder="شهر" /><textarea placeholder="آدرس کامل پستی"></textarea>
+          <input id="customerCity" type="text" placeholder="شهر">
+          <textarea id="customerAddress" placeholder="آدرس کامل پستی"></textarea>
         </div>
         <div class="cstep" data-cstep="3" hidden>
           <h3>پرداخت امن</h3>
